@@ -1,0 +1,1824 @@
+/* =========================
+   GLOBAL RESET + THEME
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark: #020617;
+    --dark-soft: #0b1120;
+    --dark-card: #111827;
+
+    --royal-bg: #f7efe0;
+    --royal-card: #fff8dc;
+    --royal-card-soft: #f1e2bc;
+
+    --green: #185234;
+    --green-dark: #0f3422;
+    --gold: #d4af37;
+    --gold-dark: #9a7015;
+
+    --text-dark: #142515;
+    --text-muted: #53624d;
+    --text-light: #fff8dc;
+
+    --border-gold: rgba(212,175,55,0.25);
+    --border-dark: rgba(255,255,255,0.08);
+
+    --shadow-royal: 0 30px 80px rgba(60,45,20,0.16);
+    --shadow-dark: 0 24px 70px rgba(0,0,0,0.38);
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--royal-bg);
+    color: var(--text-dark);
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 76px;
+    padding: 0 42px;
+    background: rgba(2,6,23,0.96);
+    backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--text-light);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -7px;
+    background: var(--gold);
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   FOOTER - ROYAL PORTAL
+========================= */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    background:
+            radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 30%),
+            linear-gradient(135deg, #020617, #0f1f12);
+    color: #fff8dc;
+    padding: 58px 40px 28px;
+    border-top: 1px solid rgba(212,175,55,0.22);
+}
+
+.footer-glow {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: rgba(212,175,55,0.08);
+    border-radius: 50%;
+    right: -120px;
+    top: -130px;
+    pointer-events: none;
+}
+
+.footer-header {
+    position: relative;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+.footer-header h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 12px;
+    color: #fff8dc;
+    letter-spacing: 0.3px;
+}
+
+.footer-header p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.footer-grid {
+    position: relative;
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.footer-card {
+    background: rgba(255,255,255,0.055);
+    border: 1px solid rgba(212,175,55,0.18);
+    border-radius: 26px;
+    padding: 28px;
+    min-height: 225px;
+    box-shadow: 0 22px 60px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+.footer-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(212,175,55,0.4);
+}
+
+.footer-card h3 {
+    color: #d4af37;
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.footer-card a {
+    display: block;
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-bottom: 13px;
+    line-height: 1.6;
+    transition: 0.25s ease;
+}
+
+.footer-card a:hover {
+    color: #d4af37;
+    transform: translateX(4px);
+}
+
+.footer-contact-btn {
+
+    background: linear-gradient(135deg, #d4af37, #9a7015);
+    /*display: inline-flex !important;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    min-width: 175px;
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid #888;
+    color: white !important;
+    border-radius: 8px;
+
+}
+
+.footer-contact-btn:hover {
+    background: linear-gradient(135deg, #f1c94c, #b8860b);
+    color: #142515 !important;
+}
+
+.footer-socials {
+    display: flex;
+
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 22px;
+    margin-bottom: 0 !important;
+}
+.facebook-icon {
+    background: #1877f2;
+    color: white !important;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.youtube {
+    background: #ff0000;
+    color: white !important;
+}
+.footer-socials a:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.footer-credit {
+    position: relative;
+    text-align: center;
+    margin-top: 36px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.footer-credit strong {
+    color: #d4af37;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        padding: 50px 22px 25px;
+    }
+}
+/* =========================
+   ROYAL HOME PAGE
+========================= */
+
+.royal-home {
+    background: var(--royal-bg);
+    color: var(--text-dark);
+}
+
+/* HERO */
+
+.royal-hero {
+    min-height: 720px;
+    position: relative;
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1fr 390px;
+    align-items: center;
+    gap: 58px;
+    overflow: hidden;
+    background:
+            linear-gradient(90deg, rgba(15,31,18,0.96), rgba(15,31,18,0.72)),
+            url("/images/karbala-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.royal-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 25% 25%, rgba(212,175,55,0.25), transparent 28%),
+            linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.58));
+}
+
+.royal-hero-content,
+.royal-prayer-card {
+    position: relative;
+    z-index: 2;
+}
+
+
+.royal-pill {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(212,175,55,0.18);
+    color: #f8df8e;
+    border: 1px solid rgba(212,175,55,0.35);
+    font-weight: 900;
+    margin-bottom: 24px;
+}
+
+.royal-hero-content h1 {
+    font-family: Georgia, serif;
+    font-size: 78px;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 18px;
+    letter-spacing: -2px;
+}
+
+.royal-hero-content h2 {
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 22px;
+    max-width: 760px;
+}
+
+.royal-hero-content p {
+    color: #e8e1ce;
+    font-size: 19px;
+    line-height: 1.8;
+    max-width: 720px;
+    margin-bottom: 34px;
+}
+
+.royal-actions {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+
+}
+
+.royal-actions a,
+.royal-prayer-card button {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--text-dark);
+    padding: 15px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+    transition: 0.25s ease;
+}
+
+.royal-actions a:hover,
+.royal-prayer-card button:hover {
+    transform: translateY(-3px);
+}
+
+.royal-actions .royal-outline {
+    background: rgba(255,255,255,0.08);
+    color: var(--text-light);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* PRAYER CARD */
+
+.royal-prayer-card {
+    background: rgba(255,248,220,0.95);
+    padding: 34px;
+    border-radius: 36px;
+    box-shadow: 0 35px 100px rgba(0,0,0,0.38);
+    border: 1px solid rgba(212,175,55,0.35);
+}
+
+/*.royal-prayer-card > span {*/
+/*    font-size: 25px;*/
+/*    margin-top: 18px;*/
+/*    color: var(--gold-dark);*/
+/*    margin-bottom: 28px;*/
+/*}*/
+
+.royal-prayer-card h3 {
+    font-size: 25px;
+    /*margin-top: 18px;*/
+    color: var(--gold-dark);
+    margin-bottom: 8px;
+    /*line-height: 1.35;*/
+}
+
+.royal-prayer-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.royal-prayer-card .main-prayer {
+    background:
+            radial-gradient(circle at top right, rgba(212,175,55,0.34), transparent 35%),
+            linear-gradient(135deg, var(--green), var(--green-dark));
+    padding: 20px;
+    border-radius: 28px;
+    color: var(--text-light);
+    margin: 20px 0 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.royal-prayer-card .main-prayer::after {
+    content: "☾";
+    position: absolute;
+    right: 22px;
+    top: 4px;
+    font-size: 76px;
+    color: rgba(255,255,255,0.12);
+}
+
+.royal-prayer-card .main-prayer span {
+    color: var(--gold);
+    font-weight: 900;
+}
+
+.royal-prayer-card .main-prayer h2 {
+    font-size: 32px;
+    /*line-height: 1.3;*/
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* QUICK ACCESS */
+
+.royal-quick-access {
+    max-width: 1180px;
+    margin: -75px auto 80px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    position: relative;
+    z-index: 5;
+}
+
+.royal-quick-access button,
+.royal-quick-access a {
+    min-height: 210px;
+    padding: 30px;
+    text-align: left;
+
+    text-decoration: none;
+    border-radius: 34px;
+    background: var(--royal-card);
+    color: var(--text-dark);
+    cursor: pointer;
+    box-shadow: var(--shadow-royal);
+    border: 1px solid var(--border-gold);
+    transition: 0.3s ease;
+}
+
+.royal-quick-access button:hover,
+.royal-quick-access a:hover {
+    transform: translateY(-10px);
+    background: var(--green);
+    color: var(--text-light);
+}
+
+.royal-quick-access span {
+    color: var(--gold-dark);
+    font-weight: 900;
+}
+
+.royal-quick-access h3 {
+    font-size: 25px;
+    margin: 22px 0 12px;
+}
+
+.royal-quick-access p {
+    line-height: 1.6;
+    opacity: 0.82;
+}
+
+/* LATEST VIDEOS */
+
+.royal-video-section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 25px 90px;
+}
+
+.royal-section-title {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.royal-section-title span {
+    color: var(--gold-dark);
+    font-weight: 900;
+}
+
+.royal-section-title h2 {
+    font-family: Georgia, serif;
+    color: var(--text-dark);
+    font-size: 46px;
+    margin-top: 8px;
+}
+
+.royal-section-title p {
+    color: #64705d;
+    margin-top: 8px;
+}
+
+.royal-video-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 24px;
+}
+
+.royal-video-card {
+    /*height: 520px;*/
+    display: flex;
+    flex-direction: column;
+    background: var(--royal-card);
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: var(--shadow-royal);
+    border: 1px solid var(--border-gold);
+    transition: 0.3s ease;
+}
+
+.royal-video-card:hover {
+    transform: translateY(-10px);
+}
+
+/*.royal-video-card:first-child {*/
+/*    grid-row: span 2;*/
+/*}*/
+
+.royal-video-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+/*.royal-video-card:first-child img {*/
+/*    height: 190px;*/
+/*}*/
+
+.royal-video-card div {
+    padding: 23px;
+    min-height: 78px;
+    line-height: 1.35;
+    overflow: hidden;
+}
+
+.royal-video-card span {
+    color: var(--gold-dark);
+    font-weight: 900;
+}
+
+.royal-video-card h3 {
+    color: var(--text-dark);
+    margin: 10px 0;
+}
+
+.royal-video-card p {
+    color: #5f6c58;
+}
+
+.royal-video-card a {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 18px;
+    background: var(--green);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-weight: 900;
+}
+
+.royal-empty-card {
+    grid-column: 1 / -1;
+    background: var(--royal-card);
+    border-radius: 34px;
+    padding: 35px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* POPUP */
+
+.royal-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20,37,21,0.78);
+    backdrop-filter: blur(12px);
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.royal-popup {
+    width: min(760px, 100%);
+    max-height: 82vh;
+    overflow: hidden;
+    background: var(--royal-card);
+    border-radius: 36px;
+    padding: 34px;
+    position: relative;
+    box-shadow: 0 35px 110px rgba(0,0,0,0.35);
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.royal-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    border: none;
+    background: var(--green);
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.royal-popup h2 {
+    color: var(--text-dark);
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin-bottom: 24px;
+}
+
+.royal-popup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.royal-popup-grid div,
+.royal-popup-item {
+    background: var(--royal-card-soft);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid var(--border-gold);
+}
+
+.royal-popup-grid span,
+.royal-popup-item span {
+    color: var(--gold-dark);
+    font-weight: 900;
+}
+
+.royal-popup-grid b {
+    display: block;
+    color: var(--green);
+    font-size: 26px;
+    margin-top: 8px;
+}
+
+.royal-popup-scroll {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.royal-popup-item {
+    margin-bottom: 14px;
+}
+
+.royal-popup-item h3 {
+    color: var(--text-dark);
+    margin: 8px 0;
+}
+
+.royal-popup-item p,
+.royal-popup-item small {
+    color: var(--text-muted);
+}
+
+/* =========================
+   PUBLIC PAGES
+========================= */
+
+.public-page {
+    min-height: calc(100vh - 146px);
+    padding: 55px 42px;
+    background:
+            radial-gradient(circle at top left, rgba(212,175,55,0.17), transparent 28%),
+            var(--royal-bg);
+    color: var(--text-dark);
+}
+
+.public-page h1 {
+    font-family: Georgia, serif;
+    text-align: center;
+    font-size: 44px;
+    color: var(--text-dark);
+    margin-bottom: 38px;
+}
+
+/* VIDEO PAGE */
+
+.video-grid,
+.home-grid,
+.gallery-grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 24px;
+}
+
+.video-card,
+.home-card,
+.gallery-card {
+    background: var(--royal-card);
+    color: var(--text-dark);
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-royal);
+    transition: 0.3s ease;
+}
+
+.video-card:hover,
+.home-card:hover,
+.gallery-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-card img,
+.home-card img,
+.gallery-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.video-card img {
+    height: 190px;
+}
+
+.home-card img {
+    height: 170px;
+    border-radius: 20px 20px 0 0;
+}
+
+.event-banner {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #fff8dc;
+    border-radius: 18px 18px 0 0;
+}
+.gallery-card img {
+    height: 240px;
+}
+
+.video-card-body,
+.gallery-card div,
+.home-card {
+    padding: 22px;
+}
+
+.video-card-body h3,
+.gallery-card h3,
+.home-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.video-card-body p,
+.video-card-body span,
+.gallery-card p,
+.home-card p,
+.home-card span {
+    color: var(--text-muted);
+    line-height: 1.6;
+    display: block;
+    margin-top: 6px;
+}
+
+.video-card-body a,
+.home-card a {
+    display: inline-block;
+    background: var(--green);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 999px;
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+/* CONTACT */
+
+.contact-form {
+    max-width: 680px;
+    margin: auto;
+    background: var(--royal-card);
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-royal);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(20,37,21,0.14);
+    background: #fffdf3;
+    color: var(--text-dark);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 999px;
+    background: var(--green);
+    color: var(--text-light);
+    font-weight: 900;
+    cursor: pointer;
+}
+.field-hint {
+    display: block;
+    margin-top: -8px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #8b7355;
+}
+
+.reply-actions {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.reply-actions a {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+.success-box,
+.error-box {
+    max-width: 680px;
+    margin: 0 auto 20px;
+    padding: 13px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.success-box {
+    background: rgba(24,82,52,0.12);
+    color: var(--green);
+}
+
+.error-box {
+    background: rgba(239,68,68,0.12);
+    color: #b91c1c;
+}
+
+/* QURAN */
+
+/* =========================
+   QURAN PAGE - ROYAL READER
+========================= */
+
+.quran-layout {
+    max-width: 1240px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* LEFT SURAH PANEL */
+.surah-list {
+    position: sticky;
+    top: 100px;
+    max-height: 78vh;
+    overflow-y: auto;
+    padding: 18px;
+    border-radius: 32px;
+    background:
+            linear-gradient(145deg, rgba(255,248,220,0.96), rgba(241,226,188,0.88));
+    border: 1px solid rgba(212,175,55,0.32);
+    box-shadow: 0 30px 80px rgba(60,45,20,0.16);
+}
+
+.surah-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.surah-list::-webkit-scrollbar-thumb {
+    background: #b8860b;
+    border-radius: 999px;
+}
+
+.surah-list button {
+    font-family: sans-serif;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(212,175,55,0.22);
+    border-radius: 18px;
+    background:
+            linear-gradient(135deg, #fffaf1, #f3ead8);
+    color: #142515;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: 0.28s ease;
+    box-shadow: 0 10px 25px rgba(60,45,20,0.06);
+}
+
+.surah-list button:hover {
+    transform: translateX(6px);
+    background:
+            linear-gradient(135deg, #185234, #0f3422);
+    color: #fff8dc;
+    border-color: rgba(212,175,55,0.45);
+}
+
+/* RIGHT READING PANEL */
+.surah-content {
+    min-height: 78vh;
+    padding: 34px;
+    border-radius: 34px;
+    background:
+            radial-gradient(circle at top right, rgba(212,175,55,0.15), transparent 28%),
+            linear-gradient(145deg, #fffaf1, #f6ead0);
+    border: 1px solid rgba(212,175,55,0.32);
+    box-shadow: 0 30px 90px rgba(60,45,20,0.15);
+}
+
+.surah-content > p {
+    color: #53624d;
+    font-size: 18px;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.surah-content h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    color: #142515;
+    text-align: center;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.surah-content h2::after {
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #9a7015);
+    border-radius: 999px;
+    display: block;
+    margin: 16px auto 0;
+}
+
+/* AYAH CARD */
+.ayah-card {
+    padding: 26px;
+    margin-bottom: 20px;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(212,175,55,0.22);
+    box-shadow: 0 18px 45px rgba(60,45,20,0.08);
+    transition: 0.28s ease;
+}
+
+.ayah-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.78);
+    box-shadow: 0 25px 60px rgba(60,45,20,0.13);
+}
+
+/* ARABIC TEXT */
+.arabic-text {
+    font-family: "Traditional Arabic", "Amiri", Georgia, serif;
+    font-size: 36px;
+    line-height: 2.4;
+    direction: rtl;
+    text-align: right;
+    color: #142515;
+    margin-bottom: 18px;
+}
+
+/* TRANSLATION */
+.translation-text {
+    color: #53624d;
+    font-size: 16px;
+    line-height: 1.8;
+    border-left: 4px solid #d4af37;
+    padding-left: 16px;
+    margin: 15px 0 18px;
+}
+
+/* AUDIO */
+.ayah-card audio {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 999px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .quran-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .surah-list {
+        position: relative;
+        top: 0;
+        max-height: 360px;
+    }
+
+    .surah-content {
+        padding: 24px;
+    }
+
+    .arabic-text {
+        font-size: 30px;
+    }
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+    min-height: calc(100vh - 146px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+    background:
+            radial-gradient(circle at top left, rgba(212,175,55,0.18), transparent 28%),
+            var(--royal-bg);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    background: var(--royal-card);
+    color: var(--text-dark);
+    padding: 36px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-royal);
+}
+
+.login-card h1 {
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.login-card p {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.login-card input {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(20,37,21,0.14);
+    background: #fffdf3;
+    color: var(--text-dark);
+}
+
+.login-card button {
+    padding: 14px;
+    border: none;
+    border-radius: 999px;
+    background: var(--green);
+    color: var(--text-light);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* =========================
+   ADMIN PANEL
+========================= */
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #070b14;
+    color: white;
+}
+
+.admin-sidebar {
+    height: calc(100vh - 76px);
+    top: 76px;
+    width: 280px;
+    background: linear-gradient(180deg, #020617, #0b1120);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+
+}
+
+.admin-sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #fff8dc;
+}
+
+.admin-sidebar button {
+    background: rgba(255,255,255,0.05);
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.admin-sidebar button:hover,
+.admin-sidebar button.active {
+    background: linear-gradient(135deg, #185234, #0f3422);
+    color: #fff8dc;
+    transform: translateX(5px);
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    color: white !important;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 36px;
+    overflow-x: hidden;
+}
+
+.admin-page {
+    min-height: 100vh;
+}
+
+.admin-page h1 {
+    font-size: 36px;
+    margin-bottom: 28px;
+    color: #fff8dc;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 28px;
+}
+
+.admin-form,
+.admin-table {
+    background: linear-gradient(145deg, #111827, #020617);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.38);
+    padding: 26px;
+    border-radius: 24px;
+}
+
+.admin-form h2,
+.admin-table h2 {
+    color: #d4af37;
+    margin-bottom: 18px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #020617;
+    color: white;
+}
+
+.admin-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.admin-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #185234, #0f3422);
+    color: #fff8dc;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.admin-table {
+    overflow-x: auto;
+}
+
+.admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
+
+.admin-table th {
+    color: #94a3b8;
+}
+
+.admin-table tr:hover {
+    background: rgba(212,175,55,0.05);
+}
+.form-hint {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: -6px;
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(212,175,55,0.08);
+    border: 1px dashed rgba(212,175,55,0.35);
+    color: #cbd5e1;
+}
+
+.upload-placeholder small {
+    display: block;
+    margin-top: 6px;
+    color: #94a3b8;
+}
+.upload-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: #d4af37;
+    margin-top: 8px;
+}
+
+.edit-btn,
+.danger-btn {
+    border: none;
+    padding: 8px 13px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #6366f1;
+    margin-right: 8px;
+}
+
+.danger-btn {
+    background: #ef4444;
+}
+
+.cancel-btn {
+    background: #475569 !important;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+}
+
+
+.admin-shell {
+    min-height: 100vh;
+    background: #070b14;
+    color: white;
+}
+
+.admin-topbar {
+    height: 76px;
+    background: #020617;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-topbar h2 {
+    color: #fff8dc;
+    font-size: 22px;
+}
+
+.admin-topbar div {
+    display: flex;
+    gap: 12px;
+}
+
+.admin-topbar button {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: #185234;
+    color: #fff8dc;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.admin-topbar .topbar-logout {
+    background: #ef4444;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 76px);
+}
+.admin-thumb {
+    width: 80px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.admin-filters {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-filters input,
+.admin-filters select {
+    min-width: 220px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(212,175,55,0.25);
+}
+
+
+.public-filters {
+    max-width: 1180px;
+    margin: 0 auto 32px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.public-filters button {
+    padding: 11px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(212,175,55,0.28);
+    background: #fff8dc;
+    color: #142515;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.public-filters button:hover{
+    background: #8ea663;
+    color: #fff8dc;
+    transform: translateY(-2px);
+}
+.public-filters button.active {
+    background: #185234;
+    color: #fff8dc;
+    transform: translateY(-2px);
+}
+
+.empty-public-state {
+    max-width: 700px;
+    margin: 35px auto;
+    text-align: center;
+    background: #fff8dc;
+    border: 1px dashed rgba(212,175,55,0.35);
+    border-radius: 28px;
+    padding: 36px;
+    color: #53624d;
+}
+
+.empty-public-state h2 {
+    color: #142515;
+    margin-bottom: 10px;
+}
+
+
+
+/* DASHBOARD */
+
+.dashboard-home h1 {
+    margin-bottom: 25px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.dashboard-card h3 {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: var(--gold);
+    font-size: 36px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.pagination button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    background: linear-gradient(135deg,#185234,#0f3422);
+    color: white;
+    transition: 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: 700;
+    color: #142515;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .navbar {
+        height: auto;
+        padding: 18px 22px;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .royal-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .royal-quick-access,
+    .royal-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .royal-video-card:first-child {
+        grid-row: auto;
+    }
+
+    .royal-video-card:first-child img {
+        height: 220px;
+    }
+
+    .royal-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+    }
+
+    .admin-grid,
+    .quran-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .royal-quick-access,
+    .royal-video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .royal-hero {
+        padding: 70px 24px;
+    }
+
+    .royal-hero-content h1 {
+        font-size: 38px;
+    }
+
+    .public-page {
+        padding: 40px 20px;
+    }
+}
+.article-grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 26px;
+}
+
+.article-card {
+    background: var(--royal-card);
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-royal);
+    transition: 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+}
+
+.article-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.article-card-body {
+    padding: 24px;
+}
+
+.article-card-body span,
+.article-popup span {
+    color: var(--gold-dark);
+    font-weight: 900;
+}
+
+.article-card-body h3 {
+    font-size: 23px;
+    margin: 12px 0;
+    color: var(--text-dark);
+    line-height: 1.35;
+}
+
+.article-desc {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.article-card-body small,
+.article-popup small {
+    display: block;
+    color: #64705d;
+    margin-bottom: 18px;
+}
+
+.article-card-body button {
+    background: var(--green);
+    color: var(--text-light);
+    border: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.article-popup {
+    width: min(850px, 100%);
+    max-height: 86vh;
+    overflow-y: auto;
+    background: var(--royal-card);
+    border-radius: 34px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 35px 110px rgba(0,0,0,0.35);
+}
+
+.article-popup img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-bottom: 22px;
+}
+
+.article-popup h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: var(--text-dark);
+    margin: 12px 0;
+}
+
+.article-popup-desc {
+    color: var(--gold-dark);
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.article-content {
+    color: var(--text-dark);
+    line-height: 1.9;
+    font-size: 17px;
+    white-space: pre-line;
+    margin-top: 18px;
+}
+
+/* =========================
+   FINAL MOBILE FIXES
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        padding: 16px 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .royal-hero {
+        min-height: auto;
+        padding: 65px 22px 120px;
+        gap: 34px;
+    }
+
+    .royal-hero-content h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .royal-hero-content h2 {
+        font-size: 22px;
+    }
+
+    .royal-hero-content p {
+        font-size: 16px;
+    }
+
+    .royal-prayer-card {
+        padding: 24px;
+        border-radius: 28px;
+    }
+
+    .royal-quick-access {
+        margin: -70px auto 55px;
+        padding: 0 18px;
+    }
+
+    .royal-section-title h2,
+    .public-page h1 {
+        font-size: 34px;
+    }
+
+    .royal-video-section {
+        padding: 0 18px 65px;
+    }
+
+    .footer-header h2 {
+        font-size: 32px;
+    }
+
+    .admin-content {
+        padding: 24px 18px;
+    }
+
+    .admin-sidebar {
+        position: relative;
+        top: 0;
+        height: auto;
+        padding: 20px;
+    }
+
+    .admin-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .article-popup {
+        padding: 22px;
+        border-radius: 26px;
+    }
+
+    .article-popup img {
+        height: 220px;
+    }
+
+    .article-popup h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .royal-actions {
+        flex-direction: column;
+    }
+
+    .royal-actions a,
+    .royal-prayer-card button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-card {
+        padding: 24px;
+    }
+
+    .pagination {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+
+
